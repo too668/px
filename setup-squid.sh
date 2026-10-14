@@ -143,6 +143,13 @@ show_status() {
     fi
 }
 
+print_time_loop() {
+    while true; do
+        date '+%Y-%m-%d %H:%M:%S'
+        sleep 10
+    done
+}
+
 show_menu() {
     echo
     echo '====== Squid 管理菜单 ======'
@@ -150,6 +157,7 @@ show_menu() {
     echo '2. 启动'
     echo '3. 重启'
     echo '4. 查看服务状态'
+    echo '5. 每10秒打印当前时间'
     echo '0. 退出'
     echo '============================'
 }
@@ -165,7 +173,8 @@ while true; do
         2) start_squid ;;
         3) restart_squid ;;
         4) show_status ;;
+        5) print_time_loop ;;
         0) echo '已退出。'; exit 0 ;;
-        *) echo '无效选项，请输入 0-4。' ;;
+        *) echo '无效选项，请输入 0-5。' ;;
     esac
 done
