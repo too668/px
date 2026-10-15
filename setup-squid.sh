@@ -145,7 +145,7 @@ show_status() {
 
 print_time_loop() {
     while true; do
-        date '+%Y-%m-%d %H:%M:%S'
+        TZ='Asia/Hong_Kong' date '+%Y-%m-%d %H:%M:%S %Z'
         sleep 10
     done
 }
